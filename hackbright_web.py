@@ -65,10 +65,10 @@ def new_student_info():
                             github=github)
 #########################################################################
 
-@app.route("/project")
-def return_project_info():
+# @app.route("/project")
+# def return_project_info():
 
-    '''Return the tile, description, and maximum grade of a project'''
+#     '''Return the tile, description, and maximum grade of a project'''
 
     
 
