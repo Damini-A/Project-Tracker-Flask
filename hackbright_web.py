@@ -65,12 +65,31 @@ def new_student_info():
                             github=github)
 #########################################################################
 
-# @app.route("/project")
-# def return_project_info():
+@app.route("/project")
+def return_project_info():
 
-#     '''Return the tile, description, and maximum grade of a project'''
-
+    '''Return the tile, description, and maximum grade of a project'''
     
+    title = request.args.get('title')
+    row = hackbright.get_project_by_title(title)
+
+    rows = hackbright.get_grades_by_title(title)
+
+    # github = request.args.get('rows[0]')
+
+    github = rows[0][0]
+
+
+    first, last, github = hackbright.get_student_by_github(github)
+
+
+    return render_template("project_info.html",
+                            title=title,
+                            rows=row,
+                            newrows=rows,
+                            first=first,
+                            last=last,
+                            github=github)
 
 
 #########################################################################

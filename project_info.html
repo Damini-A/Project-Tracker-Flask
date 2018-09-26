@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+    <title>Project Info</title>
+</head>
+<body>
+
+  {% for row in rows %}
+  <h1>{{ row[0] }} {{ row[1] }}</h1>
+
+  <p>Max Grade: {{ row[2] }}</p>
+
+  {% endfor %}
+</body>
+</html>
